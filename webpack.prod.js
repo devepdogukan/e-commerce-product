@@ -46,7 +46,8 @@ module.exports = {
         './ProductListPage': './src/product-listing-app',
       },
       remotes: {
-        container: 'container@http://localhost:8081/remoteEntry.js',
+        container:
+          'container@https://e-commerce-container.vercel.app/remoteEntry.js',
       },
       shared: {
         react: {

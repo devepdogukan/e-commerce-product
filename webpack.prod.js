@@ -14,7 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'auto',
+    publicPath: 'https://e-commerce-product-silk.vercel.app/',
   },
   resolve: {
     plugins: [new TsconfigPathsPlugin()],
@@ -67,7 +67,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './dist/index.html',
     }),
   ],
   optimization: {

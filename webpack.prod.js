@@ -14,7 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'https://e-commerce-product-silk.vercel.app/',
+    publicPath: 'auto',
   },
   resolve: {
     plugins: [new TsconfigPathsPlugin()],
@@ -75,14 +75,5 @@ module.exports = {
     minimize: true,
     minimizer: [new TerserPlugin()],
   },
-  devServer: {
-    static: path.join(__dirname, 'dist'),
-    compress: true,
-    historyApiFallback: true,
-    port: 3001,
-    hot: false,
-    liveReload: true,
-  },
-
   mode: 'production',
 }

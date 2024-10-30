@@ -9,9 +9,12 @@ const ProductCart = ({
   title,
   description,
   price,
-}: IWithActions & IProduct) => {
+}: IWithActions & Partial<IProduct>) => {
   return (
-    <div className="w-full max-lg:max-w-full border rounded-lg shadow bg-gray-800 border-gray-700">
+    <div
+      data-testid="product-cart"
+      className="w-full max-lg:max-w-full border rounded-lg shadow bg-gray-800 border-gray-700"
+    >
       <img
         className="m-auto w-40 h-40 mt-4 rounded-t-lg"
         src={thumbnail}

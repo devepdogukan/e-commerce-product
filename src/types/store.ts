@@ -18,7 +18,7 @@ export type ContainerStore = {
   product: {
     list: IProduct[]
     filter: string
-    sort: null | string
+    sort: string
     loading: boolean
     error: string
   }

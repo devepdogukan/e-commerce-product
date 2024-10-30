@@ -27,7 +27,7 @@ const ProductListPage = ({ actions, dispatch }: IWithActions) => {
     return b.title.localeCompare(a.title)
   })
 
-  if (loading || !dispatch) return <Loading />
+  if (loading) return <Loading />
 
   return (
     <div className="container mx-auto p-4">
@@ -40,12 +40,15 @@ const ProductListPage = ({ actions, dispatch }: IWithActions) => {
           type="text"
           placeholder="Search product"
           value={filter}
-          onChange={(e) => dispatch(actions!.product.setFilter(e.target.value))}
+          onChange={(e) =>
+            dispatch!(actions!.product.setFilter(e.target.value))
+          }
           className="border rounded p-2 mr-2"
         />
         <select
-          value={sort?.toString()}
-          onChange={(e) => dispatch(actions!.product.setSort(e.target.value))}
+          value={sort.toString()}
+          data-testid="product-list-select"
+          onChange={(e) => dispatch!(actions!.product.setSort(e.target.value))}
           className="border rounded p-2"
         >
           <option value="asc">A-Z</option>
